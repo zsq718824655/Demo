@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	$("#username").blur(function(){
+		var name= $("#username").val();
+		$.post(
+		"/AJax/JiaoYan",
+		{"name":name},
+		function(data){
+			alert(data.name);
+		},
+		"json"
+		);
+		
+	});
+
+	
+	
+	
+});
+
+
+
+</script>
+</head>
+<body>
+<input type="text" id="username"/>
+</body>
+</html>

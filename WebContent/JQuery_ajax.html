@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+function fn1(){
+	
+	//异步访问
+	$.get(
+	"/AJax/JQueryAjax",	//url
+	{"name":"小明"},//传入的数据
+	function(date){//回调函数，date传回的数据
+		alert(date.name);
+		
+	},
+	"json"//传回数据的类型
+	
+	
+	);
+
+}
+
+function fn2(){
+	
+	//异步访问
+	$.post(
+	"/AJax/JQueryAjax",	//url
+	{"name":"小明"},//传入的数据
+	function(date){//回调函数，date传回的数据
+		alert(date.name);
+		
+	},
+	"json"//传回数据的类型
+	
+	
+	);
+
+}
+
+function fn3(){
+	$.ajax({
+	url:"/AJax/JQueryAjax",
+	async:true,
+	type:"POST",
+	data:{"name":"小明"},
+	success:function(data){
+		alert(data.name);
+	},
+	error:function(){
+		alert("失败");
+	},
+	
+	
+	dataType:"json"
+	
+	});
+}
+
+</script>
+</head>
+<body>
+<input type="button" value="jq的get访问" onclick="fn1()" /><br/>
+<input type="button" value="jq的post访问" onclick="fn2()"/><br/>
+<input type="button" value="jq的ajax访问" onclick="fn3()"/><br/>
+</body>
+</html>
