@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AjaxServlet
+ * Servlet implementation class AjaxServletfads·¢Éú
  * fasdf
  */
 @WebServlet("/AjaxServlet")
